@@ -96,12 +96,7 @@ class Dalle:
         self.save_urls_as_s3_objects()
 
     def save_urls_as_s3_objects(self):
-        """Upload a file to an S3 bucket
-
-        :param file_name: File to upload
-        :param bucket: Bucket to upload to
-        :param object_name: S3 object name. If not specified then file_name is used
-        :return: True if file was uploaded, else False
+        """Upload a url object to an S3 bucket
         """
         for idx, image_url in enumerate(self._image_urls):
             r = requests.get(image_url, stream=True)
